@@ -1,0 +1,14 @@
+# پیکربندی Railway (فرمت TOML — جایگزین railway.json)
+# اگر هر دو فایل وجود داشته باشند، Railway از railway.json استفاده می‌کند.
+# این فایل برای کسانی است که فرمت TOML را ترجیح می‌دهند.
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "node server/index.js"
+healthcheckPath = "/api/health"
+healthcheckTimeout = 120
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10

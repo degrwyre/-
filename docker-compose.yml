@@ -1,0 +1,25 @@
+# اجرای محلی با داکر (اختیاری)
+# استفاده:  docker compose up -d   →   http://localhost:3000
+services:
+  messenger:
+    build: .
+    container_name: rohamgram
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATA_DIR: /data
+      DB_FILE: /data/rohamgram.db
+      UPLOAD_DIR: /data/uploads
+      # ⚠️ حتماً تغییر دهید:
+      JWT_SECRET: ${JWT_SECRET:-change-me-to-a-long-random-string}
+      MAX_UPLOAD_MB: ${MAX_UPLOAD_MB:-50}
+      ALLOW_SIGNUP: ${ALLOW_SIGNUP:-true}
+      APP_NAME: ${APP_NAME:-رهام گرام}
+    volumes:
+      - messenger-data:/data
+
+volumes:
+  messenger-data:

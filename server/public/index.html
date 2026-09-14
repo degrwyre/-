@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5">
+<meta name="theme-color" content="#17212b">
+<meta name="description" content="رهام گرام — پیام‌رسان وب سریع با چت خصوصی، گروه، کانال و ارسال فایل">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>رهام گرام — پیام‌رسان</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=1.1.1">
+</head>
+<body>
+
+<!-- ================= آیکون‌های SVG (بدون وابستگی خارجی) ================= -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M3.4 20.4 21.85 12.9a1 1 0 0 0 0-1.84L3.4 3.55a1 1 0 0 0-1.37 1.1l1.8 6.42a1 1 0 0 0 .84.73l7.02.82-7.02.82a1 1 0 0 0-.84.73l-1.8 6.42a1 1 0 0 0 1.37 1.1Z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5Zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M12 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41Z"/></symbol>
+  <symbol id="i-attach" viewBox="0 0 24 24"><path d="M16.5 6v11.5a4 4 0 1 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 1 1-2 0V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 1 0-8 0v12.5a5.5 5.5 0 0 0 11 0V6h-1.5Z"/></symbol>
+  <symbol id="i-emoji" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm-3.5-9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm7 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM12 17.5c2.03 0 3.8-1.11 4.75-2.75h-9.5A5.5 5.5 0 0 0 12 17.5Z"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17Z"/></symbol>
+  <symbol id="i-check-double" viewBox="0 0 24 24"><path d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7Zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41ZM.41 13.41 6 19l1.41-1.41L1.83 12 .41 13.41Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7Z"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25ZM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83Z"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12ZM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4Z"/></symbol>
+  <symbol id="i-reply" viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11Z"/></symbol>
+  <symbol id="i-forward" viewBox="0 0 24 24"><path d="M14 9V5l7 7-7 7v-4.1c-5 0-8.5 1.6-11 5.1 1-5 4-10 11-11Z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M16 12V4h1V2H7v2h1v8l-2 2v2h5.2v6h1.6v-6H18v-2l-2-2Z"/></symbol>
+  <symbol id="i-mute" viewBox="0 0 24 24"><path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2Zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4a1.5 1.5 0 0 0-3 0v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2Zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6ZM3.41 2.86 2 4.27l3.18 3.18A6.9 6.9 0 0 0 5 11v5l-2 2v1h13.73l2 2 1.41-1.41L3.41 2.86Z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-3.87 0-8 1.94-8 5v3h16v-3c0-3.06-4.13-5-8-5Z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-8 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13Zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5Z"/></symbol>
+  <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M18 11v2h4v-2h-4Zm-2 6.61c.96.71 2.21 1.65 3.2 2.39.4-.53.8-1.07 1.2-1.6-.99-.74-2.24-1.68-3.2-2.4-.4.54-.8 1.08-1.2 1.61ZM20.4 5.6c-.4-.53-.8-1.07-1.2-1.6-.98.74-2.21 1.68-3.2 2.4.4.53.8 1.07 1.2 1.6.99-.74 2.22-1.68 3.2-2.4ZM4 9a1 1 0 0 1 1-1h3l3.29-3.29c.63-.63 1.71-.18 1.71.71v13.16c0 .89-1.08 1.34-1.71.71L8 16H5a1 1 0 0 1-1-1V9Z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2Z"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.62-.94l-.36-2.54a.5.5 0 0 0-.5-.42h-3.84a.5.5 0 0 0-.5.42l-.36 2.54c-.59.24-1.13.56-1.62.94l-2.39-.96a.5.5 0 0 0-.6.22L2.74 8.84a.5.5 0 0 0 .12.64l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.42.34.6.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.26.42.5.42h3.84c.24 0 .45-.18.5-.42l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .6-.22l1.92-3.32c.12-.22.07-.47-.12-.64l-2.01-1.58ZM12 15.6A3.6 3.6 0 1 1 12 8.4a3.6 3.6 0 0 1 0 7.2Z"/></symbol>
+  <symbol id="i-logout" viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5-5-5ZM4 5h8V3H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8v-2H4V5Z"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2ZM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5Z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm2 16H8v-2h8v2Zm0-4H8v-2h8v2Zm-3-5V3.5L18.5 9H13Z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7L8 5Z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14Zm8-14v14h4V5h-4Z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2ZM19 9h-4V3H9v6H5l7 7 7-7Z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4Zm-1 14-3.5-3.5 1.41-1.41L11 12.17l5.59-5.59L18 8l-7 7Z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12.3 4.9c.4-.2.6-.7.5-1.1s-.6-.8-1-.8C6.9 3 3 6.9 3 11.8S6.9 20.6 12 20.6c4.9 0 8.8-3.9 9-8.8 0-.5-.3-.9-.8-1.1-.4-.2-1-.1-1.3.3-1.5 1.7-3.7 2.7-6.1 2.7-2.5 0-4.7-1.1-6.2-2.9-.3-.4-.4-.9-.3-1.4.2-.6.5-1.2.8-1.7.2-.4.6-.7 1-1 .4-.3.8-.5 1.2-.8Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-5v3m0 14v3M2 12h3m14 0h3M4.9 4.9l2.1 2.1m10 10 2.1 2.1m0-14.2-2.1 2.1m-10 10-2.1 2.1"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M3.9 12a3.1 3.1 0 0 1 3.1-3.1h4V7H7a5 5 0 0 0 0 10h4v-1.9H7A3.1 3.1 0 0 1 3.9 12ZM8 13h8v-2H8v2Zm9-6h-4v1.9h4a3.1 3.1 0 1 1 0 6.2h-4V17h4a5 5 0 0 0 0-10Z"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><path d="M11 7h2v2h-2V7Zm0 4h2v6h-2v-6Zm1-9a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 17.27 6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27Z"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><path d="M12.65 10A6 6 0 1 0 6 16a5.95 5.95 0 0 0 3.35-1.02V17H12v-2h2v-2h2v-3h-3.35ZM6 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8Z"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Zm0 12.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M9 2 7.17 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3.17L15 2H9Zm3 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10Z"/></symbol>
+  <symbol id="i-verified" viewBox="0 0 24 24"><path d="m12 1.5 2.6 2.1 3.3-.4 1 3.2 3 1.5-1.3 3.1 1.3 3.1-3 1.5-1 3.2-3.3-.4L12 22.5l-2.6-2.1-3.3.4-1-3.2-3-1.5 1.3-3.1L2.1 9.9l3-1.5 1-3.2 3.3.4L12 1.5Zm-1.2 13.9 5.4-5.4-1.4-1.4-4 4-1.9-1.9-1.4 1.4 3.3 3.3Z"/></symbol>
+  <symbol id="i-archive" viewBox="0 0 24 24"><path d="M20 6h-4V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2Zm-10-2h4v2h-4V4Zm10 15H4v-6h6v1h4v-1h6v6Zm0-8h-6v-1h-4v1H4V8h16v3Z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/></symbol>
+  <symbol id="i-device" viewBox="0 0 24 24"><path d="M4 6h18V4H4a2 2 0 0 0-2 2v11H0v3h14v-3H4V6Zm20 2h-8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2Zm-2 9h-4v-7h4v7Z"/></symbol>
+</svg>
+
+<div id="app">
+  <!-- صفحه‌ی بارگذاری اولیه -->
+  <div id="boot" class="boot">
+    <div class="boot-logo">
+      <svg viewBox="0 0 100 100" class="boot-plane"><path d="M8 48 88 14 72 86l-24-18-12 14-2-20L8 48Z"/></svg>
+    </div>
+    <div class="boot-text">رهام گرام</div>
+    <div class="boot-loader"><span></span></div>
+  </div>
+</div>
+
+<div id="toasts" class="toasts"></div>
+<div id="modal-root"></div>
+<div id="ctx-root"></div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/utils.js?v=1.1.1"></script>
+<script src="/js/state.js?v=1.1.1"></script>
+<script src="/js/api.js?v=1.1.1"></script>
+<script src="/js/ui.js?v=1.1.1"></script>
+<script src="/js/chatlist.js?v=1.1.1"></script>
+<script src="/js/messages.js?v=1.1.1"></script>
+<script src="/js/chat.js?v=1.1.1"></script>
+<script src="/js/panels.js?v=1.1.1"></script>
+<script src="/js/chatmodals.js?v=1.1.1"></script>
+<script src="/js/auth.js?v=1.1.1"></script>
+<script src="/js/settings.js?v=1.1.1"></script>
+<script src="/js/main.js?v=1.1.1"></script>
+</body>
+</html>

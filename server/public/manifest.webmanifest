@@ -1,0 +1,21 @@
+{
+  "name": "رهام گرام — پیام‌رسان",
+  "short_name": "رهام گرام",
+  "description": "پیام‌رسان وب سریع با چت خصوصی، گروه، کانال و ارسال فایل",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0e1621",
+  "theme_color": "#17212b",
+  "lang": "fa",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
