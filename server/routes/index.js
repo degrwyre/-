@@ -65,4 +65,29 @@ router.delete('/contacts/:userId', requireAuth, (req, res) => {
   res.json({ ok: true });
 });
 
+/** صفحه‌ی مدیر: list کامل ثبت‌نام‌کننده‌ها — فقط با توکن ADMIN_TOKEN */
+router.get('/admin', (req, res) => {
+  const token = process.env.ADMIN_TOKEN || '';
+  if (!token || String(req.query.token || '') !== token) {
+    return res.status(403).type('text/plain; charset=utf-8').send('دسترسی ممنوع — توکن مدیر لازم است');
+  }
+  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const users = db.prepare('SELECT id, name, username, phone, created_at FROM users ORDER BY id').all();
+  const chats = db.prepare('SELECT COUNT(*) c FROM chats').get().c;
+  const messages = db.prepare('SELECT COUNT(*) c FROM messages').get().c;
+  const fmt = (t) => { try { const d = new Date(t); return d.toLocaleDateString('fa-IR') + ' ' + d.toLocaleTimeString('fa-IR', { hour: '2-digit', minute: '2-digit' }); } catch { return '—'; } };
+  const rows = users.map((u) =>
+    `<tr><td>${u.id}</td><td><b>${esc(u.name)}</b></td><td dir="ltr">@${esc(u.username)}</td><td dir="ltr">${esc(u.phone) || '—'}</td><td>${fmt(u.created_at)}</td></tr>`).join('');
+  res.type('html').send(`<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>پنل مدیر — رهام گرام</title>
+<style>body{font-family:system-ui,sans-serif;background:#0f141a;color:#e8edf2;margin:0;padding:24px;line-height:1.8}
+h1{font-size:20px}.cards{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.card{background:#1c2733;border-radius:12px;padding:12px 22px;text-align:center}
+.card b{display:block;font-size:26px;color:#7cc0ff}table{width:100%;border-collapse:collapse;background:#1c2733;border-radius:12px;overflow:hidden}
+th,td{padding:10px 14px;text-align:right;border-bottom:1px solid #2a3a4a;font-size:14px}th{background:#223140}</style></head><body>
+<h1>🛡️ پنل مدیر — رهام گرام</h1>
+<div class="cards"><div class="card"><b>${users.length}</b>کاربر ثبت‌نام‌شده</div><div class="card"><b>${chats}</b>چت/گروه/کانال</div><div class="card"><b>${messages}</b>پیام</div></div>
+<table><tr><th>#</th><th>نام</th><th>نام کاربری</th><th>شماره</th><th>تاریخ ثبت‌نام</th></tr>${rows}</table>
+</body></html>`);
+});
+
 module.exports = router;
